@@ -61,7 +61,7 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="content.css">
-
+<script type="text/javascript" src="general_page.js"></script>
 <style>
 .w3-lobster {
   font-family: "Lobster", serif;

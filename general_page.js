@@ -1,4 +1,3 @@
- <script>  
 
       function fetchdb(sql,getdata){
         $.ajax({
@@ -88,5 +87,5 @@
         return "";
       }
 
-</script>
+
       

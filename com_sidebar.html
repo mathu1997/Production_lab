@@ -1,6 +1,13 @@
 
-<?php include 'header.html'?>
-<?php include 'general_page.html'?>
+<script type="text/javascript">
+	function fetchdb(sql,getdata){
+        $.ajax({url: "header.php",
+            success: function(data){
+              document.write(data);
+            }
+        });
+      } 
+</script>
 <script>
 if(getCookie("staff_id")=='')
 	window.location.href = "index.php";
