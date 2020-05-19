@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-color: white;
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Oxygen', sans-serif;
+}
+
+#header-nav{
+	background-color: gray;
+	border-radius: 0;
+	border: 0;
+	color: white;
+	font-family: 'Oxygen', sans-serif;
+}
+#logo-img{
+	background: url("img/logo.jpg") no-repeat;
+	background-size: contain;
+	width: 128px;
+	height: 64px;
+	margin: 5px;
+}
+.login-container{
+height: 100%;
+align-content: center;
+}
+.navbar-brand h1{
+	font-family: 'Lora', serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #222;
+}
+
+.navbar-brand p{
+	font-size: 14px;
+}
+.login-card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  width: 400px;
+}
+
+.login-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+background-color: #FFC312;
+color: black;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}

@@ -1,0 +1,40 @@
+.content{
+	margin: 10px 80px 50px 0px;
+	width: 90%;
+	border:1px solid gray;
+}
+.content-body{
+	height: 100%;
+	
+}
+.c-col{
+	border-style: inset;
+}
+.checkbox{
+	width: 20px;
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+.ui.ribbon.big.label{
+	margin:10px 0 20px 0;
+	box-shadow: 20px 20px 10px 5px grey;
+}
+.dash-card{
+	position : relative; 
+}
+.dash-card .card{
+	margin:10px auto;
+	width:230px;
+}
+.dash-card .card .ui.statistic>.value, .ui.statistics .statistic>.value{
+	font-size: 2rem!important;
+}
+.dash-card .card .card-img-top{
+	height:230px;
+}
+.card-img{
+	background-repeat: no-repeat;
+
+}
+

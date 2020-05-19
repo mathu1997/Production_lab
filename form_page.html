@@ -1,0 +1,140 @@
+
+<style type="text/css">
+	.dropdown-item{
+		border-bottom: 1px solid black;
+	}
+	form{
+		padding: 20px;
+	}
+</style>
+
+<div class="modal" id="newitem">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><h2 id="head" class="ui teal ribbon big label" >Consumable Product Updates</h2></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      	<center class="profile-img" >
+			<img src="img/logo.jpg" id="prod-img">
+		</center>
+        <form class="border rounded ui equal width form" autocomplete="off">
+			<div class="ui form">
+			  <div class="fields">
+			    <div class="field">
+			      <label>ID</label>
+			      <input type="text" placeholder="ID" name="id" id="id">    
+			  	</div>
+			  	
+			    <div class="field">
+			    	<label>Product Name</label>
+			    	<div class="ui action input">
+					    <input type="text" placeholder="Product Name" name="name" id="name" required="required">
+					    <div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="spec" style="padding: 7px;" name="specification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >specification</button>
+							<div class="dropdown-menu" id="optionspec" aria-labelledby="spec"></div>	
+						</div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- search result -->
+			<div id="result"></div>
+
+			<div class="ui form">
+			  	<div class="fields">
+				    <div class="field">
+				    	<label>Quantity</label>
+				      	<div class="ui action input">	
+							<input type="text" placeholder="Quantity" name="qty" id="qty" required="required">
+							<div class="dropdown">
+							  <button class="btn btn-secondary dropdown-toggle" type="button" id="q_unit" style="height: 100%;" name="q_unit"  id="q_unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Unit</button>
+							  <div class="dropdown-menu" id="optionunit" aria-labelledby="q_unit">
+							  </div>
+							</div>	
+						</div>
+				    </div>
+				    <div id="price" class="field">
+				      <label>Price</label>
+				      <input type="text" placeholder="Price" name="cost" id="cost" required="required">
+				    </div>
+				    <div class="field" id="cmp">
+				      <label>Company Name/Bill ID</label>
+				      <input type="text" placeholder="Company Name/Bill No." name="company" id="cname">
+				    </div>
+			  </div>
+			  <div class="fields">
+				  	<div class="field">
+				      <label>Product Image</label>
+				      <input type="file" placeholder="ID" name="img">    
+				  	</div>
+				    <div class="field" id="cmp">
+				      <label>Scanned Bill</label>
+				      <input type="file" placeholder="Bill Image" name="company_bill">
+				    </div>
+				  </div>
+			</div>
+			<center style="color: red">
+				<div id="errmsg"></div>
+			</center>
+		</form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      	<input type="submit" onclick="myFunction()" class="btn btn-primary" name="submit" value="submit"/>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	// console.log(window.data);
+	(function (){
+		var sql = "SELECT distinct q_unit FROM product";
+		fetchdb(sql,function(data){
+			for(var key in data){
+				$("#optionunit").append(`<a class="dropdown-item" href="#" onclick=saveUnit('`+data[key]["q_unit"]+`')>`+data[key]["q_unit"]+`</option>`);
+			}
+			$("#optionunit").append(`
+				<a class="dropdown-item" href="#">
+					<div class="ui action input">	
+						<input type="text" placeholder="Quantity unit" id="newunit">
+						<button type="button" onclick=saveUnit($("#newunit").val())>Add</button>	
+					</div>
+				</a>`);
+		});
+	})();
+	(function (){
+		var sql = "SELECT distinct specification FROM product";
+		fetchdb(sql,function(data){
+			for(var key in data){
+				$("#optionspec").append(`
+					<a class="dropdown-item" href="#" onclick="savespec('`+data[key]["specification"]+`')" >`+data[key]["specification"]+`</a>`);
+			}
+			$("#optionspec").append(`
+				<a class="dropdown-item" href="#">
+					<div class="ui action input">	
+						<input type="text" placeholder="Quantity unit" id="newspec">
+						<button type="button" onclick=savespec($('#newspec').val())>Add</button>	
+					</div>
+				</a>`);
+		});
+	})();
+	function saveUnit(unitval){
+		unitval = unitval||"unknown";
+		$("#q_unit").html(unitval);
+		$("#q_unit").val(unitval);
+	}
+	function savespec(specval){
+		specval = specval||"unknown";
+		$("#spec").html(specval);
+		$("#q_unit").val(unitval);
+	}
+</script>
